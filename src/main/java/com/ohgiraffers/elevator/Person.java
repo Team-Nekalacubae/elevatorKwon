@@ -54,7 +54,7 @@ public class Person {
                 }
             } else {
 
-                System.out.println("(1)elevator has not arrive in floor " + position);
+                System.out.println("elevator has not arrive in floor " + position);
             }
         } else {
 
