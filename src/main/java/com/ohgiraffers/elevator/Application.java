@@ -43,36 +43,36 @@ public class Application {
 
         while (true) {
 
-            System.out.println("===== use elevator =====");
+            System.out.println("===== 승강기 사용 =====");
 
             String io1;
             if (ele.isOpen()) {
 
-                io1 = "opend";
+                io1 = "문 열림";
             } else {
 
-                io1 = "closed";
+                io1 = "문 닫힘";
             }
 
-            System.out.println("elevator is on floor " + ele.getFloor() + " door " + io1);
+            System.out.println("승강기의 상태 : " + ele.getFloor() + "층 / " + io1);
 
             String io2;
             if (per.isIn()) {
 
-                io2 = "inside";
+                io2 = "승강기 탑승중";
             } else {
 
-                io2 = "outside";
+                io2 = "승강기 외부";
             }
 
-            System.out.println("user is on floor " + per.getPosition() + ", " + io2);
-            System.out.println("1. call botton");
-            System.out.println("2. open botton");
-            System.out.println("3. boarding");
-            System.out.println("4. choose floor");
-            System.out.println("5. quit");
-            System.out.println("9. exit");
-            System.out.print("type action : ");
+            System.out.println("사용자의 상태 : " + per.getPosition() + "층 / " + io2);
+            System.out.println("1. 승강기 호출");
+            System.out.println("2. 승강기 문열림");
+            System.out.println("3. 승강기 탑승");
+            System.out.println("4. 층 선택");
+            System.out.println("5. 승강기 내림");
+            System.out.println("9. 종료");
+            System.out.print("행동을 결정해 주세요 : ");
             int no = sc.nextInt();
 
             switch (no) {
@@ -91,10 +91,21 @@ public class Application {
                 case 5:
                     per.quit();
                     break;
-            }
-            if (no == 9) {
+                case 9:
+                    break;
+                default:
+                    System.out.println("잘못된 행동을 입력했습니다.");
+                    break;
 
+
+            }
+            if (no == 9 && !per.isIn()) {
+
+                System.out.println("승강기 사용을 종료합니다.");
                 break;
+            } else {
+
+                System.out.println("먼저 승강기에서 나가주세요");
             }
         }
 
