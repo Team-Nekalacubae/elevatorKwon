@@ -103,7 +103,7 @@ public class Application {
 
                 System.out.println("승강기 사용을 종료합니다.");
                 break;
-            } else {
+            } else if (no == 9 && per.isIn()){
 
                 System.out.println("먼저 승강기에서 나가주세요");
             }
